@@ -1,12 +1,16 @@
 ﻿using System;
 
-namespace ConsoleApplication
+namespace SimpleWebWorker
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-		    Console.WriteLine("test");
+		    var webCaller = new WebCaller();
+            
+            string content = webCaller.GetContent("http://www.wp.pl/").Result;
+            
+            Console.WriteLine(content.Length);
         }
     }
 }
