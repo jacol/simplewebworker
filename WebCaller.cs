@@ -5,11 +5,11 @@ namespace SimpleWebWorker
 {
     public class WebCaller
     {
-        public Task<string> GetContent(string url)
+        public async Task<string> GetContent(string url)
         {
             using(var httpClient = new HttpClient())
             {
-                return httpClient.GetStringAsync(url);
+                return await httpClient.GetStringAsync(url);
             }
         }
     }
